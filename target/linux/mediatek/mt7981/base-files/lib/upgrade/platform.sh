@@ -224,6 +224,12 @@ platform_do_upgrade() {
 		CI_ROOTPART="rootfs"
 		emmc_do_upgrade "$1"
 		;;
+	philips,hy3000 |\
+	*emmc*)
+		CI_KERNPART="kernel"
+		CI_ROOTPART="rootfs"
+		emmc_do_upgrade "$1"
+		;;
 	xiaomi,mi-router-ax3000t-stock|\
 	xiaomi,mi-router-ax3000t-an8855-stock|\
 	xiaomi,mi-router-wr30u-stock)
@@ -261,6 +267,7 @@ platform_check_image() {
 	*jcg,q30* |\
 	cmcc,a10 |\
 	cmcc,rax3000m* |\
+	philips,hy3000 |\
 	cmcc,xr30* |\
 	h3c,nx30pro |\
 	*honor,fur-602* |\
